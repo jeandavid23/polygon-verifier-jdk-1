@@ -1,0 +1,12 @@
+<!--
+  resources.qrc
+  Déclaration des ressources Qt (icône).
+  Compilation optionnelle : pyrcc5 -o resources.py resources.qrc
+  Le plugin charge l'icône directement depuis icons/icon.svg, la compilation
+  n'est donc PAS obligatoire pour le fonctionnement.
+-->
+<RCC>
+  <qresource prefix="/plugins/smart_polygon_cleaner">
+    <file>icons/icon.svg</file>
+  </qresource>
+</RCC>

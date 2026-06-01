@@ -1,0 +1,24 @@
+[general]
+name=Polygon Verifier by JDK
+qgisMinimumVersion=3.28
+qgisMaximumVersion=3.99
+description=Cleans a polygon layer: real geometry correction (makeValid + duplicate nodes + buffer 0, QGIS-internal validation), removal of strong overlaps (> threshold), duplicates, full containments, slivers and tiny areas (to a "deleted" layer), and detection + annotation of weak overlaps (<= threshold) with their percentage.
+about=Polygon Verifier by JDK detects overlaps between polygons, computes the overlap ratio relative to the smaller polygon, removes duplicates and overlaps above a business threshold (18 percent by default) while keeping the most reliable polygon (most valid geometry, then largest area, then oldest ID), repairs invalid geometries and produces a clean layer plus a report (PDF/CSV/TXT). Designed for land, cadastral, agricultural, forestry and EUDR/RA compliance workflows. Optimized for large datasets (R-tree spatial index, background processing).
+version=3.0.3
+author=TODO_YOUR_NAME
+email=TODO_your.email@example.com
+tracker=TODO_https://github.com/USER/polygon-verifier-jdk/issues
+repository=TODO_https://github.com/USER/polygon-verifier-jdk
+homepage=TODO_https://github.com/USER/polygon-verifier-jdk
+category=Vector
+icon=icons/icon.svg
+experimental=False
+deprecated=False
+tags=polygon,overlap,topology,cleaning,duplicates,quality,cadastre,EUDR,forestry,agriculture,geometry
+hasProcessingProvider=yes
+changelog=3.0.3 - Removed all percent characters from metadata fields to satisfy the QGIS metadata parser.
+    3.0.2 - Fixed metadata parsing error: escaped percent sign in about field (QGIS metadata parser treats the percent sign specially).
+    3.0.1 - Renamed to "Polygon Verifier by JDK"; metadata cleaned for QGIS plugin repository submission (English description/about, removed build artifacts).
+    3.0.0 - Clean output: real geometry correction (makeValid + remove duplicate nodes + extract polygon parts + buffer 0, QGIS-internal validation); removal of every overlap strictly above the threshold (loser = least reliable: most valid, then largest, then oldest ID), full containments, duplicates, tiny areas and slivers (traced to a deleted layer); keep + annotate only partial overlaps below the threshold.
+    2.0.0 - Detection/annotation of overlaps (overlap, ovlp_pct, is_ovlp) instead of deletion; limited removals (tiny areas, exact duplicates, full containments, slivers) with a dedicated deleted layer; reinforced repair makeValid + buffer 0; QGIS-internal validation engine; configurable identifier field.
+    1.0.0 - Initial version.
